@@ -1,0 +1,44 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import Car from "@components/icons/CarIcon.astro";
+---
+
+<Layout title="Athomik Nails - Ubicación">
+    <main class="w-full text-athomik-white items-center"></main>
+        <div class="inline-flex absolute">
+            <a href="/" class="p-6 mt-12">Volver </a>
+        </div>
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <h1
+                class="text-6xl lg:text-7xl xl:text-8xl text-athomik-pink mb-8 border-b-2 border-athomik-white"
+            >
+                Ubicación
+            </h1>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1640.12969402231!2d-58.695873!3d-34.69863699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDQxJzU1LjEiUyA1OMKwNDEnNDUuMSJX!5e0!3m2!1ses!2sar!4v1722878969219!5m2!1ses!2sar"
+                width="300"
+                height="420"
+                style="border:1px solid #000000;
+                border-radius: 10px;
+                box-shadow: 0 0 10px #000000;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div
+                class="flex flex-col gap-2 items-center border border-transparent rounded-xl backdrop-blur-sm p-4"
+            >
+                <h2 class="text-2xl">Athomik Nails</h2>
+                <h3 class="text-lg">
+                    C/ Triunvirato 120 , E/ Europa y Primera Junta
+                </h3>
+                <a href="https://m.uber.com/ul/?action=setPickup&pickup[latitude]=CURRENT_LAT&pickup[longitude]=CURRENT_LNG&dropoff[latitude]=-34.6986389&dropoff[longitude]=-58.6958611&dropoff[nickname]=Athomik%20Nails" target="_blank"><i><Car /></i> Ir en Uber</a>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    h1 {
+        font-family: "Great Vibes", cursive;
+    }
+</style>

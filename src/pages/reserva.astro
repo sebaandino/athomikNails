@@ -1,0 +1,80 @@
+---
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout title="Athomik Nails - Reserva">
+    <main class="w-full items-center"></main>
+    <div class="inline-flex absolute">
+        <a href="/" class="p-6 mt-12">Volver </a>
+    </div>
+    <div
+        class="h-full flex flex-col justify-center items-center gap-4 md:items-start md:ml-4"
+    >
+        <h1
+            class="text-nowrap text-5xl lg:text-7xl xl:text-8xl text-athomik-pink mb-8 border-b-2 border-athomik-white"
+        >
+            Reserva de Turno:
+        </h1>
+        <form action="#" class="flex flex-col gap-4" id="reservaForm">
+            <div class="flex">
+                <label for="calendar">Fecha de Reserva:</label>
+                <input
+                    type="date"
+                    id="calendar"
+                    name="calendar"
+                    class="calendar-input"
+                    required
+                />
+            </div>
+            <div class="flex">
+                <label for="time">Hora Preferible:</label>
+                <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    class="calendar-input"
+                    min="09:00"
+                    max="21:00"
+                    required
+                />
+            </div>
+            <div class="flex">
+                <label for="servicio">Servicio:</label>
+                <select name="servicio" id="servicio" class="calendar-input">
+                    <option value="0" class="bg-athomik-pink text-white"
+                        >Seleccione un Servicio</option
+                    >
+                    <option value="1" class="bg-athomik-pink text-white"
+                        >Todavia no me decido</option
+                    >
+                    <option value="2" class="bg-athomik-pink text-white"
+                        >Capping</option
+                    >
+                    <option value="3" class="bg-athomik-pink text-white"
+                        >Gel</option
+                    >
+                    <option value="4" class="bg-athomik-pink text-white"
+                        >Acrilico</option
+                    >
+                </select>
+            </div>
+            <button
+                type="submit"
+                class="rounded bg-athomik-brown text-athomik-black p-4"
+                >Enviar solicitud de reserva por whatsapp</button
+            >
+        </form>
+    </div>
+</Layout>
+
+<style>
+    .calendar-input {
+        background-color: transparent;
+        color: white;
+        justify-content: center;
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        backdrop-filter: blur(20px);
+    }
+</style>

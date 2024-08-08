@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "@fontsource/great-vibes";
+---
+
+<Layout title="Athomik Nails - Home">
+	<main class="grid grid-rows-2 row text-athomik-white h-full">
+		
+		<div class="flex flex-col justify-end ml-6">
+			<h1 class="text-nowrap text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-athomik-pink">
+				Athomik Nails
+			</h1>
+			<h2 class="text-2xl lg:text-4xl animate-pulse">"Manos perfectas, uñas de ensueño."</h2>
+		</div>
+		<div class="flex flex-col justify-end ml-8 mb-10 text-2xl lg:text-4xl">
+			<ul class="list-none flex flex-col gap-4"> 
+				<li>
+					<button class="border rounded-xl p-2 bg-transparent text-athomik-brown border-athomik-brown hover:bg-athomik-brown hover:text-athomik-black hover:border-trasparent transition-colors duration-300 ease-in-out">
+						<a href="/reserva">Reserva tu turno</a>
+					</button>
+				</li>
+				<li>
+					<button class="border rounded-xl p-2 bg-transparent text-athomik-brown border-athomik-brown hover:bg-athomik-brown hover:text-athomik-black hover:border-trasparent transition-colors duration-300 ease-in-out"> 
+						<a href="/ubicacion">Ubicacion</a>
+					</button>
+				</li>
+				<li>
+					<button class="border rounded-xl p-2 bg-transparent text-athomik-brown border-athomik-brown hover:bg-athomik-brown hover:text-athomik-black hover:border-trasparent transition-colors duration-300 ease-in-out"> 
+						<a href="/fotos">Fotos</a>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	h2 {
+		font-family: "Great Vibes", cursive;
+	}
+</style>

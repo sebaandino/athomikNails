@@ -16,7 +16,7 @@ import Layout from "src/layouts/Layout.astro";
             Reserva de Turno:
         </h1>
         <form action="#" class="flex flex-col gap-4" id="reservaForm">
-            <div class="flex">
+            <div class="flex justify-between">
                 <label for="calendar">Fecha de Reserva:</label>
                 <input
                     type="date"
@@ -26,7 +26,7 @@ import Layout from "src/layouts/Layout.astro";
                     required
                 />
             </div>
-            <div class="flex">
+            <div class="flex justify-between">
                 <label for="time">Hora Preferible:</label>
                 <input
                     type="time"
@@ -38,23 +38,29 @@ import Layout from "src/layouts/Layout.astro";
                     required
                 />
             </div>
-            <div class="flex">
-                <label for="servicio">Servicio:</label>
+            <div class="flex justify-between">
+                <label for="servicio" class="place-content-center">Servicio:</label>
                 <select name="servicio" id="servicio" class="calendar-input">
                     <option value="0" class="bg-athomik-pink text-white"
-                        >Seleccione un Servicio</option
+                        >Seleccione</option
                     >
                     <option value="1" class="bg-athomik-pink text-white"
                         >Todavia no me decido</option
                     >
                     <option value="2" class="bg-athomik-pink text-white"
-                        >Capping</option
+                        >Semipermanente</option
                     >
                     <option value="3" class="bg-athomik-pink text-white"
-                        >Gel</option
+                        >Capping</option
                     >
                     <option value="4" class="bg-athomik-pink text-white"
-                        >Acrilico</option
+                        >Esculpidas</option
+                    >
+                    <option value="4" class="bg-athomik-pink text-white"
+                        >Lifting</option
+                    >
+                    <option value="4" class="bg-athomik-pink text-white"
+                        >Cejas</option
                     >
                 </select>
             </div>
@@ -74,7 +80,9 @@ import Layout from "src/layouts/Layout.astro";
         justify-content: center;
         padding: 10px;
         font-size: 16px;
-        width: 80%;
+        width: 60%;
         backdrop-filter: blur(20px);
+        border: 1px solid white;
+        border-radius: 20px;
     }
 </style>

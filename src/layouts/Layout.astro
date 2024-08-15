@@ -22,7 +22,7 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="bg-athomik-black h-dvh">
+	<body class="bg-athomik-black">
 		<Header />
 			<slot />
 	</body>
@@ -41,5 +41,6 @@ import ViewTransitions from "astro/components/ViewTransitions.astro";
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
+		background-attachment: fixed;
 	}
 </style>

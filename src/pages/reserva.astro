@@ -3,12 +3,12 @@ import Layout from "src/layouts/Layout.astro";
 ---
 
 <Layout title="Athomik Nails - Reserva">
-    <main class="w-full items-center"></main>
-    <div class="inline-flex absolute">
-        <a href="/" class="p-6 mt-12">Volver </a>
+    <div class="p-6 mt-12 inline-flex absolute">
+        <a href="/" class=" inline-flex justify-start place-self-centerborder p-2 rounded-full animate-pulse border  border-athomik-white">Volver </a>
     </div>
+    <main class="w-dvw h-dvh items-center flex flex-col justify-center">
     <div
-        class="h-full flex flex-col justify-center items-center gap-4 md:items-start md:ml-4"
+        class="flex flex-col justify-center items-center gap-4 md:items-start md:ml-4"
     >
         <h1
             class="text-nowrap text-5xl lg:text-7xl xl:text-8xl text-athomik-pink mb-8 border-b-2 border-athomik-white"
@@ -34,12 +34,14 @@ import Layout from "src/layouts/Layout.astro";
                     name="time"
                     class="calendar-input"
                     min="09:00"
-                    max="21:00"
+                    max="18:00"
                     required
                 />
             </div>
             <div class="flex justify-between">
-                <label for="servicio" class="place-content-center">Servicio:</label>
+                <label for="servicio" class="place-content-center"
+                    >Servicio:</label
+                >
                 <select name="servicio" id="servicio" class="calendar-input">
                     <option value="0" class="bg-athomik-pink text-white"
                         >Seleccione</option
@@ -67,6 +69,7 @@ import Layout from "src/layouts/Layout.astro";
             <button
                 type="submit"
                 class="rounded bg-athomik-brown text-athomik-black p-4"
+                onsubmit="reserva()"
                 >Enviar solicitud de reserva por whatsapp</button
             >
         </form>
@@ -86,3 +89,46 @@ import Layout from "src/layouts/Layout.astro";
         border-radius: 20px;
     }
 </style>
+
+<script>
+    document
+        .getElementById("reservaForm")
+        .addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevenir el envío del formulario
+
+            const fechaInput = document.getElementById(
+                "calendar",
+            ) as HTMLInputElement;
+            const horaInput = document.getElementById(
+                "time",
+            ) as HTMLInputElement;
+            const servicioInput = document.querySelector(
+                "option:checked",
+            ) as HTMLOptionElement;
+
+            // Variables con los valores capturados
+            const fecha = fechaInput.value;
+            const hora = horaInput.value;
+            const opcion = servicioInput.textContent;
+
+            // Crear el mensaje
+            const mensaje = `Hola, me gustaría reservar un turno.
+            Fecha de Reserva: ${fecha}
+            Hora Preferible: ${hora}
+            Servicio: ${opcion}`;
+
+            // Codificar el mensaje para la URL
+            const mensajeCodificado = encodeURIComponent(mensaje);
+
+            // Número de teléfono (reemplaza con el número real)
+            const numeroTelefono = "541139064966"; // Ejemplo
+
+            // Generar el enlace de WhatsApp
+            const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
+
+            // Imprimir el enlace o redirigir automáticamente
+            console.log(mensaje);
+            console.log(urlWhatsApp);
+            window.open(urlWhatsApp, '_blank'); // Descomenta esta línea para abrir el enlace automáticamente
+        });
+</script>

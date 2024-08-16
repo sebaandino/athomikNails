@@ -4,18 +4,18 @@ import Layout from "src/layouts/Layout.astro";
 
 <Layout title="Athomik Nails - Reserva">
     <div class="p-6 mt-12 inline-flex absolute">
-        <a href="/" class=" inline-flex justify-start place-self-centerborder p-2 rounded-full animate-pulse border  border-athomik-white">Volver </a>
+        <a href="/" class=" inline-flex justify-start place-self-centerborder p-2 rounded-full border  border-athomik-white">Volver </a>
     </div>
-    <main class="w-dvw h-dvh items-center flex flex-col justify-center">
+    <main class="w-dvw h-dvh items-center flex flex-col justify-center md:items-start">
     <div
-        class="flex flex-col justify-center items-center gap-4 md:items-start md:ml-4"
+        class="flex flex-col items-center gap-4  md:items-start  md:ml-4"
     >
         <h1
             class="text-nowrap text-5xl lg:text-7xl xl:text-8xl text-athomik-pink mb-8 border-b-2 border-athomik-white"
         >
             Reserva de Turno:
         </h1>
-        <form action="#" class="flex flex-col gap-4" id="reservaForm">
+        <form action="#" class="flex flex-col gap-4 md:w-full" id="reservaForm">
             <div class="flex justify-between">
                 <label for="calendar">Fecha de Reserva:</label>
                 <input

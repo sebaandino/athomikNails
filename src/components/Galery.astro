@@ -1,0 +1,42 @@
+---
+import "photoswipe/style.css";
+import { Image } from "astro:assets";
+---
+
+<div
+    class="w-dvw pswp-gallery grid [grid-template-columns:repeat(auto-fill,minmax(450px,1fr))] gap-4 place-items-center justify-center pb-7 md:pb-0"
+    id="gallery--getting-started"
+>
+    {
+        Array.from({ length: 3 }).map((_, i) => (
+            <a
+                href={`/src/img/galeria/min-unas-${i + 1}.jpg`}
+                target="_blank"
+                data-pswp-width="1669"
+                data-pswp-height="2500"
+                class="w-3/6 md:w-96"
+            >
+                <Image
+                    src={`/src/img/galeria/min-unas-${i + 1}.jpg`}
+                    alt="foto de uñas"
+                    class="  border border-athomik-pink rounded-md"
+                    width="400"
+                    height="400"
+                />
+            </a>
+        ))
+    }
+</div>
+
+<script>
+    import PhotoSwipeLightbox from "photoswipe/lightbox";
+
+    const lightbox = new PhotoSwipeLightbox({
+        gallery: " #gallery--getting-started",
+        bgOpacity: 0.6,
+        children: "a",
+        showHideAnimationType: "fade",
+        pswpModule: () => import("photoswipe"),
+    });
+    lightbox.init();
+</script>

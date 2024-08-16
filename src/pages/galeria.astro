@@ -1,42 +1,21 @@
 ---
-import "photoswipe/style.css";
 import Layout from "src/layouts/Layout.astro";
+import Galery from "@components/Galery.astro";
 ---
 
 <Layout title="Athomik Nails - Galeria">
-    <main class=" text-athomik-white flex flex-col items-center mt-20 ">
-        <div class=" w-dvw flex justify-around pb-5" >
-            <a href="/" class=" place-self-center border p-2 rounded-full animate-pulse border-athomik-white ">Volver </a>
-            <h1
-                class="text-4xl lg:text-7xl xl:text-8xl text-athomik-pink "
-            >
+    <main class="text-athomik-white flex flex-col items-center mt-20">
+        <div class="w-dvw flex justify-around pb-5">
+            <a
+                href="/"
+                class="place-self-center border p-2 rounded-full border-athomik-white"
+                >Volver
+            </a>
+            <h1 class="text-4xl lg:text-7xl xl:text-8xl text-athomik-pink">
                 Galeria de Fotos
             </h1>
             <div></div>
         </div>
-        <div class="w-dvw pswp-gallery grid [grid-template-columns:repeat(auto-fill,minmax(450px,1fr))] gap-4  place-items-center justify-center pb-7 md:pb-0" id="gallery--getting-started">
-            { Array.from({length:3}).map((_, i) => (
-                <a href={`/src/img/galeria/unas-${i+1}.jpg`} target="_blank" data-pswp-width="1669" data-pswp-height="2500" class="w-3/6 md:w-96">
-                    <img src={`/src/img/galeria/unas-${i+1}.jpg`} alt="foto" class="  border border-athomik-pink rounded-md" />
-                </a>
-                ))}
-        </div>
+            <Galery/>
     </main>
 </Layout>
-
-<script>
-    import PhotoSwipeLightbox from "photoswipe/lightbox";
-
-    const lightbox = new PhotoSwipeLightbox({
-        // may select multiple "galleries"
-        gallery: '#gallery--getting-started',
-        showHideAnimationType: 'fade',
-
-        // Elements within gallery (slides)
-        children: "a",
-
-        // setup PhotoSwipe Core dynamic import
-        pswpModule: () => import("photoswipe"),
-    });
-    lightbox.init();
-</script>

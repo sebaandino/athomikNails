@@ -4,20 +4,20 @@ import { Image } from "astro:assets";
 ---
 
 <div
-    class="w-dvw pswp-gallery grid [grid-template-columns:repeat(auto-fill,minmax(450px,1fr))] gap-4 place-items-center justify-center pb-7 md:pb-0"
+    class="  grid [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))] gap-6 place-items-center justify-center my-8" 
     id="gallery--getting-started"
 >
     {
-        Array.from({ length: 3 }).map((_, i) => (
+        Array.from({ length: 4 }).map((_, i) => (
             <a
-                href={`/galeria/min-unas-${i + 1}.jpg`}
+                href={`/galeria/min-photo-${i + 1}.jpg`}
                 target="_blank"
                 data-pswp-width="1669"
                 data-pswp-height="2500"
-                class="w-3/6 md:w-96"
+                class="w-5/6"
             >
                 <Image
-                    src={`/galeria/min-unas-${i + 1}.jpg`}
+                    src={`/galeria/min-photo-${i + 1}.jpg`}
                     alt="foto de uñas"
                     class="  border border-athomik-pink rounded-md"
                     width="400"
